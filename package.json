@@ -1,0 +1,13 @@
+{
+  "name": "my-linux-config",
+  "version": "1.0.0",
+  "description": "Easy to copy my linux configuration",
+  "main": "",
+  "scripts": {
+    "update": "zsh ./sh/update.sh",
+    "modify": "zsh ./sh/modify.sh"
+  },
+  "keywords": [],
+  "author": "Rongger",
+  "license": "ISC"
+}
