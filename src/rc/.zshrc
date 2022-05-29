@@ -7,10 +7,8 @@ ZSH_THEME="robbyrussell"
 plugins=(
   git
   wd
-  z
   zsh-syntax-highlighting
   zsh-autosuggestions
-  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -24,8 +22,3 @@ alias proxy_on="export https_proxy=http://$host_ip:7890 http_proxy=http://$host_
 alias proxy_off="unset http_proxy;unset https_proxy;unset HTTP_PROXY;unset all_proxy;"
 alias cfg='code . && fg'
 alias ghc="source ~/.sh/ghc.sh"
-
-# [[ -s /home/johnny/.autojump/etc/profile.d/autojump.sh ]] && source /home/johnny/.autojump/etc/profile.d/autojump.sh
-# autoload -U compinit && compinit -u
-
-. /home/johnny/.sh/z.sh
