@@ -32,9 +32,13 @@ echo -n "Creating Github repository '$repo_name' ..."
 curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}' /dev/null 2>&1
 echo " done."
 
-echo "# $repo_name" >>README.md
+
+readmeFile="README.md"
 git init
-git add README.md
-git commit -m "create repo"
+if [ ! -f "$readmeFile" ]; then
+  echo "# $repo_name" >> $readmeFile
+fi
+git add $readmeFile
+git commit -m "chore: create repo"
 git remote add origin git@github.com:$username/$repo_name.git # > /dev/null 2>&1
 git push -u origin master                                     #> /dev/null 2>&1
