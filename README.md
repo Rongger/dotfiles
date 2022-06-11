@@ -1,3 +1,3 @@
-# my-linux-config
+# dotfiles
 
-Easy to copy my linux configuration
+my dotfiles
