@@ -22,3 +22,4 @@ alias proxy_on="export https_proxy=http://$host_ip:7890 http_proxy=http://$host_
 alias proxy_off="unset http_proxy;unset https_proxy;unset HTTP_PROXY;unset all_proxy;"
 alias cfg='code . && fg'
 alias ghc="source ~/.sh/ghc.sh"
+alias zource="source ~/.zshrc"
