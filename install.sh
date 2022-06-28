@@ -18,7 +18,7 @@ symlink() {
   fi
 }
 
-for name in zshrc gitconfig tmux.conf sh/do-gl.sh sh/ghc.sh sh/tmux-work.sh; do
+for name in zshrc gitconfig tmux.conf sh/do-gl.sh sh/ghc.sh sh/tmux-work.sh ssh/config; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     backup $target
