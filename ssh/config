@@ -5,3 +5,10 @@ Host github.com
   User git
   ProxyCommand nc -x $HOST_IP:$PROXY_PORT %h %p
 
+Host dev
+  HostName 10.10.5.28
+  User node
+
+Host repo
+  HostName 10.10.2.13
+  User idev
