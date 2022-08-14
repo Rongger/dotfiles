@@ -46,4 +46,7 @@ if [ ! -d ~/lib/emsdk ]; then
   source ./emsdk_env.sh
 
   echo '👌 Emsdk install done'
+else 
+  source ~/lib/emsdk/emsdk_env.sh
+  echo '👽 Emsdk has existed'
 fi

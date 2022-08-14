@@ -35,5 +35,3 @@ export PATH="$PNPM_HOME:$PATH"
 
 [[ ! -f ~/.sh/proxy.sh ]] || source ~/.sh/proxy.sh
 
-# emscripten
-[[ ! -f ~/lib/emsdk/emsdk_env.sh ]] || source ~/lib/emsdk/emsdk_env.sh
