@@ -37,4 +37,4 @@ export PATH="$PNPM_HOME:$PATH"
 
 [[ ! -f ~/.gvm/scripts/gvm ]] || source ~/.gvm/scripts/gvm && gvm use go1.19
 
-# export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
