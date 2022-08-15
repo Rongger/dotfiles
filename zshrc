@@ -35,3 +35,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 [[ ! -f ~/.sh/proxy.sh ]] || source ~/.sh/proxy.sh
 
+[[ ! -f ~/.gvm/scripts/gvm ]] || source ~/.gvm/scripts/gvm && gvm use go1.19
+
+# export PATH=$PATH:/usr/local/go/bin
