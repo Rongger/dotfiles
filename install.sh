@@ -48,4 +48,6 @@ if [ ! -d "$zsh_autosuggestions" ]; then
   echo "✅ zsh-autosuggestions"
 fi
 
+source ./install/yarn.sh
+
 echo "👌 Install done"
