@@ -16,8 +16,8 @@ createSession() {
 }
 
 createSession "mobile_frontend"
-createSession "management_frontend"
-createSession "mobile_bff"
-createSession "unplugin-auto-re-export"
+# createSession "management_frontend"
+# createSession "mobile_bff"
+# createSession "unplugin-auto-re-export"
 
 tmux attach -t "mobile_frontend"

@@ -25,6 +25,8 @@ alias c='code .'
 alias cfg='code . && fg'
 alias ghc="source ~/.sh/ghc.sh"
 alias zource="source ~/.zshrc"
+alias npmr="npm config get registry"
+alias yarnr="yarn config get registry"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
