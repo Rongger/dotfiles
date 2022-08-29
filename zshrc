@@ -28,6 +28,7 @@ alias zource="source ~/.zshrc"
 alias npmr="npm config get registry"
 alias yarnr="yarn config get registry"
 alias fh="history | grep"
+alias tag="source ~/dotfiles/sh/fast-tag.sh"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
