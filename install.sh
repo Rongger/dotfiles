@@ -14,7 +14,7 @@ symlink() {
   link=$2
   if [ ! -e "$link" ]; then
     echo "🔗 Symlinking your new $link"
-    ln -s $file $link
+    ln -sf $file $link
   fi
 }
 
