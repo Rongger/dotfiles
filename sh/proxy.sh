@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 export HOST_IP=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
 export PROXY_PORT=7890
 

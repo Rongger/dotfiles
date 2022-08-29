@@ -27,6 +27,7 @@ alias ghc="source ~/.sh/ghc.sh"
 alias zource="source ~/.zshrc"
 alias npmr="npm config get registry"
 alias yarnr="yarn config get registry"
+alias fh="history | grep"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
