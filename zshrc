@@ -32,6 +32,7 @@ alias tag="source ~/dotfiles/sh/fast-tag.sh"
 alias pwsh="powershell.exe"
 alias port_set="pwsh wsl-netsh-set"
 alias port_unset="pwsh wsl-netsh-unset"
+alias exp="explorer.exe"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
