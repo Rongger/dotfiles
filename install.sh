@@ -50,7 +50,6 @@ fi
 
 source ./install/yarn.sh
 
-sudo ln -sf $PWD/sh/send-ssh-key.sh /usr/local/bin/send-ssh-key
-# chmod +x ./sh/send-ssh-key.sh
+sudo ln -sf $PWD/sh/sshcopy.sh /usr/local/bin/sshcopy
 
 echo "👌 Install done"
