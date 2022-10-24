@@ -24,8 +24,8 @@ if [ ! -f "./package.json" ]; then
 fi
 
 current_branch=$(git rev-parse --abbrev-ref HEAD)
-if [ $current_branch != "master" ]; then
-  echo "Error: current git branch is not master."
+if [ $current_branch != "master" ] && [ $current_branch != "main" ]; then
+  echo "Error: current git branch must be master or main."
   return
 fi
 
@@ -45,4 +45,5 @@ git add .
 git commit -m "version: $next_version"
 
 git tag $next_version
+git push origin $current_branch
 git push origin $next_version
