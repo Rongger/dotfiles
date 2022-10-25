@@ -1,20 +1,6 @@
 #!/bin/zsh
 
-pkg_check() {
-  if [ $(dpkg -l | grep $1 | wc -l) -ne 0 ]; then
-    echo "1"
-  else
-    echo "0"
-  fi
-}
-
-install_if_pkg_no_exist() {
-  pkg=$1
-  has_pkg=$(pkg_check $pkg)
-  if [ $has_pkg -eq 0 ]; then
-    sudo apt-get install $pkg
-  fi
-}
+source ./functions/common.sh
 
 install_if_pkg_no_exist jq
 
