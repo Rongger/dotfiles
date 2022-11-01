@@ -1,23 +1,19 @@
 #!/bin/zsh
 
 createSession() {
-    tmux has-session -t $1
-    if [ "$?" != 0 ]; then
-        tmux new-session -s $1 -n script -d
-        tmux send-keys -t $1 "wd wsl-projects && cd $1" C-m
-        tmux send-keys -t $1 "source ~/.sh/do-gl.sh " C-m
-
-        # tmux split-window -v
-        # tmux send-keys -t $SESSIONNAME_0 "mobilestart_" C-m
-        # tmux split-window -h
-        # tmux send-keys -t $SESSIONNAME_0 "nya_" C-m
-        # tmux last-pane
-    fi
+  dir=$1
+  session=$2
+  tmux has-session -t $session
+  if [ "$?" != 0 ]; then
+    tmux new-session -s $session -n script -d
+    tmux send-keys -t $session "wd $dir && cd $session" C-m
+    tmux send-keys -t $session "source ~/.sh/do-gl.sh " C-m
+  fi
 }
 
-createSession "mobile_frontend"
-# createSession "management_frontend"
-# createSession "mobile_bff"
-# createSession "unplugin-auto-re-export"
+main="wsl-projects"
+
+createSession "yxb" "mobile_frontend"
+# createSession "yxb" "management_frontend"
 
 tmux attach -t "mobile_frontend"
