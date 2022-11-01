@@ -13,8 +13,8 @@ if [ "$?" != 0 ]; then
   tmux select-pane -L
   tmux send-keys -t $sessionName "wd yxb mobile_bff" C-m
   tmux send-keys -t $sessionName "source ~/.sh/do-gl.sh" C-m
-  tmux send-keys -t $sessionName "port_set 8001" C-m
   tmux send-keys -t $sessionName "yarn start" C-m
 fi
 
+port_set 7001
 tmux attach -t $sessionName
