@@ -7,7 +7,7 @@ tmux has-session -t $sessionName
 if [ "$?" != 0 ]; then
   tmux new-session -s $sessionName -n script -d
 
-  tmux split-window -h
+  tmux split-window -h -l 30%
   tmux send-keys -t $sessionName "redis-server" C-m
 
   tmux select-pane -L
