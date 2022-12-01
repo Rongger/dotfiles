@@ -18,7 +18,7 @@ symlink() {
   fi
 }
 
-for name in zshrc gitconfig tmux.conf p10k.zsh sh/do-gl.sh sh/ghc.sh sh/proxy.sh sh/tmux-work.sh ssh/config; do
+for name in zshrc gitconfig tmux.conf p10k.zsh warprc sh/do-gl.sh sh/ghc.sh sh/proxy.sh sh/tmux-work.sh ssh/config; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
     backup $target
@@ -26,6 +26,7 @@ for name in zshrc gitconfig tmux.conf p10k.zsh sh/do-gl.sh sh/ghc.sh sh/proxy.sh
   fi
 done
 
+source ./functions/common.sh
 source ~/.sh/proxy.sh
 shopt -s expand_aliases
 proxy_on
@@ -47,6 +48,10 @@ if [ ! -d "$zsh_autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions
   echo "✅ zsh-autosuggestions"
 fi
+
+mkdir_force ~/workspace
+mkdir_force ~/workspace/github
+mkdir_force ~/workspace/test
 
 source ./install/yarn.sh
 

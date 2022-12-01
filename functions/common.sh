@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-if [ $(type -t pkg_check) == function ]; then
+if [[ $(type -t pkg_check) = function ]]; then
   return 0
 fi
 
