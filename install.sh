@@ -1,4 +1,6 @@
 #!/bin/bash --login
+source ./functions/common.sh
+
 backup() {
   target=$1
   if [ -e "$target" ]; then
@@ -18,6 +20,7 @@ symlink() {
   fi
 }
 
+mkdir_force ~/.sh
 for name in zshrc gitconfig tmux.conf p10k.zsh warprc sh/do-gl.sh sh/ghc.sh sh/proxy.sh sh/tmux-work.sh ssh/config; do
   if [ ! -d "$name" ]; then
     target="$HOME/.$name"
@@ -26,7 +29,6 @@ for name in zshrc gitconfig tmux.conf p10k.zsh warprc sh/do-gl.sh sh/ghc.sh sh/p
   fi
 done
 
-source ./functions/common.sh
 source ~/.sh/proxy.sh
 shopt -s expand_aliases
 proxy_on
