@@ -56,6 +56,7 @@ mkdir_force ~/workspace/github
 mkdir_force ~/workspace/test
 
 source ./install/yarn.sh
+source ./install/nvm.sh
 
 sudo ln -sf $PWD/sh/sshcopy.sh /usr/local/bin/sshcopy
 
