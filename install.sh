@@ -1,63 +1,32 @@
-#!/bin/bash --login
-source ./functions/common.sh
+#!/bin/bash
 
-backup() {
-  target=$1
-  if [ -e "$target" ]; then
-    if [ ! -L "$target" ]; then
-      mv "$target" "$target.backup"
-      echo "🎁 Moved your old $target config file to $target.backup"
-    fi
-  fi
-}
+export HOST_IP=$(cat /etc/resolv.conf | grep "nameserver" | cut -f 2 -d " ")
+export PROXY_PORT=7890
 
-symlink() {
-  file=$1
-  link=$2
-  if [ ! -e "$link" ]; then
-    echo "🔗 Symlinking your new $link"
-    ln -sf $file $link
-  fi
-}
+export https_proxy=http://$HOST_IP:$PROXY_PORT http_proxy=http://$HOST_IP:$PROXY_PORT all_proxy=socks5://$HOST_IP:$PROXY_PORT
 
-mkdir_force ~/.sh
-for name in zshrc gitconfig tmux.conf p10k.zsh warprc sh/do-gl.sh sh/ghc.sh sh/proxy.sh sh/tmux-work.sh ssh/config; do
-  if [ ! -d "$name" ]; then
-    target="$HOME/.$name"
-    backup $target
-    symlink $PWD/$name $target
-  fi
-done
+sudo apt update
+sudo apt install zsh
 
-source ~/.sh/proxy.sh
-shopt -s expand_aliases
-proxy_on
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-zsh_theme=${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-if [ ! -d "$zsh_theme" ]; then
-  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $zsh_theme
-  echo "✅ powerlevel10k"
+ssh-keygen -t rsa
+cat ~/.ssh/id_rsa.pub
+
+read -p "复制 ssh 公钥到 github 认证密钥？[y]：" input
+if [ $input = "y" ]; then
+  echo "Host github.com
+    Hostname ssh.github.com
+    IdentityFile ~/.ssh/id_rsa
+    Port 443 
+    User git
+    ProxyCommand nc -x $HOST_IP:$PROXY_PORT %h %p" > ~/.ssh/config
+
+  git clone git@github.com:Rongger/dotfiles.git ~/dotfiles
+
+  cd ~/dotfiles
+
+  rm ~/.zshrc ~/.ssh/config
+
+  bash ./init.sh
 fi
-
-zsh_syntax_highlighting=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-if [ ! -d "$zsh_syntax_highlighting" ]; then
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting
-  echo "✅ zsh-syntax-highlighting"
-fi
-
-zsh_autosuggestions=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-if [ ! -d "$zsh_autosuggestions" ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions $zsh_autosuggestions
-  echo "✅ zsh-autosuggestions"
-fi
-
-mkdir_force ~/workspace
-mkdir_force ~/workspace/github
-mkdir_force ~/workspace/test
-
-source ./install/yarn.sh
-source ./install/nvm.sh
-
-sudo ln -sf $PWD/sh/sshcopy.sh /usr/local/bin/sshcopy
-
-echo "👌 Install done"
