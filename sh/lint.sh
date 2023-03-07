@@ -5,9 +5,7 @@ yarn add -D husky lint-staged prettier
 
 npx husky add .husky/pre-commit 'npx lint-staged'
 
-npm pkg set scripts.precommit="lint-staged"
-
-npm pkg set husky.hooks.pre-commit="npm run precommit"
+npm pkg set husky.hooks.pre-commit="npx lint-staged"
 
 npm pkg set lint-staged['src/*'][0]="eslint --fix"
 
