@@ -11,9 +11,7 @@ createSession() {
   fi
 }
 
-main="wsl-projects"
+createSession "yzj" "cloudflow"
+createSession "yzj" "cloudflow-mobile"
 
-createSession "yxb" "mobile_frontend"
-# createSession "yxb" "management_frontend"
-
-tmux attach -t "mobile_frontend"
+tmux attach -t "cloudflow"
