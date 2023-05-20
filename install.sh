@@ -13,7 +13,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ssh-keygen -t rsa
 cat ~/.ssh/id_rsa.pub
 
-read -p "复制 ssh 公钥到 github 认证密钥？[y]：" input
+read -p "复制 ssh 公钥到 github 认证密钥了嘛？[y]：" input
 if [ $input = "y" ]; then
   echo "Host github.com
     Hostname ssh.github.com
