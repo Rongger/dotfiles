@@ -54,7 +54,7 @@ export PATH="$PNPM_HOME:$PATH"
 
 #cfgit
 alias cb="cfgit branch"
-alias czz="cfgit cz"
+alias ccz="cfgit cz"
 alias cm="cfgit merge"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
