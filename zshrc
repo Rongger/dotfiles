@@ -17,8 +17,9 @@ source $ZSH/oh-my-zsh.sh
 alias work="source ~/.sh/tmux-work.sh"
 alias c='code .'
 alias cfg='code . && fg'
-alias ghc="source ~/.sh/ghc.sh"
+alias gs="source ~/dotfiles/sh/git-stash.sh"
 alias zource="source ~/.zshrc"
+alias yyarn="yarn && yarn"
 alias npmr="npm config get registry"
 alias yarnr="yarn config get registry"
 alias npmg="npm list -g --depth=0 2>/dev/null"
@@ -53,9 +54,9 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 #cfgit
-alias cb="cfgit branch"
-alias ccz="cfgit cz"
-alias cm="cfgit merge"
+alias cb="wsl-cfgit branch"
+alias ccz="wsl-cfgit cz"
+alias cm="wsl-cfgit merge"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
