@@ -34,10 +34,12 @@ alias port_remove="pwsh Remove-Wsl-Netsh"
 alias port_fw_set="pwsh Set-FW-Port"
 alias port_fw_remove="pwsh Remove-FW-Port"
 alias chrome_no_cors="pwsh Open-Chrome-No-Cors"
+alias ipconfig="pwsh ipconfig"
 alias exp="explorer.exe"
 alias count="ls -l | grep -c"
-alias countf="count "^-""
-alias countd="count "^d""
+# alias countf="count "^-""
+# alias countd="count "^d""
+alias cfloginrc="cat ~/workspace/yzj/cloudflow/.cfloginrc.js"
 # docker
 alias dl="docker ps -l -q"
 alias dps="docker ps"
@@ -52,6 +54,8 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+export PYTHON=/usr/bin/python3
 
 #cfgit
 alias cb="wsl-cfgit branch"
