@@ -1,0 +1,58 @@
+{
+    "projects": [
+        {
+            "name": "web",
+            "value": "3128"
+        },
+        {
+            "name": "mobile",
+            "value": "3129"
+        },
+        {
+            "name": "print",
+            "value": "3130"
+        },
+        {
+            "name": "cloudflow",
+            "value": "1048",
+            "targetBranch": {
+                "release": "publish"
+            }
+        },
+        {
+            "name": "cloudflow-mobile",
+            "value": "1051",
+            "targetBranch": {
+                "release": "publish"
+            }
+        },
+        {
+            "name": "cloudflow-flowcenter",
+            "value": "2831",
+            "targetBranch": {
+                "release": "publish_miniapp"
+            }
+        },
+        {
+            "name": "cloudflow-print",
+            "value": "2802",
+            "targetBranch": {
+                "release": "publish"
+            }
+        },
+        {
+            "name": "card-flowcenter",
+            "value": "2969",
+            "targetBranch": {
+                "release": "publish"
+            }
+        }
+    ],
+    "branchs": [
+        "test-release",
+        "release",
+        "zyy-test",
+        "zyy-ssj",
+        "master"
+    ]
+}

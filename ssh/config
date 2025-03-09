@@ -1,9 +1,9 @@
-Host github.com
-  Hostname ssh.github.com
-  IdentityFile ~/.ssh/id_rsa
-  Port 443
-  User git
-  ProxyCommand nc -x $HOST_IP:$PROXY_PORT %h %p
+# Host github.com
+#   Hostname ssh.github.com
+#   IdentityFile ~/.ssh/id_rsa
+#   Port 443
+#   User git
+#   ProxyCommand nc -x $HOST_IP:$PROXY_PORT %h %p
 
 Host dev
   HostName 10.10.5.28
