@@ -58,9 +58,9 @@ export PATH="$PNPM_HOME:$PATH"
 export PYTHON=/usr/bin/python3
 
 #cfgit
-alias cb="wsl-cfgit branch"
-alias ccz="wsl-cfgit cz"
-alias cm="wsl-cfgit merge"
+alias cb="cfgit branch"
+alias ccz="cfgit cz"
+alias cm="cfgit merge"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
