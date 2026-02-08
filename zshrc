@@ -70,3 +70,6 @@ alias cm="cfgit merge"
 [[ ! -f ~/.gvm/scripts/gvm ]] || (source ~/.gvm/scripts/gvm && gvm use go1.19)
 
 export PATH=$PATH:/usr/local/go/bin
+export PATH="$HOME/.local/bin:$PATH"
+
+alias cc="claude"
