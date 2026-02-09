@@ -40,6 +40,8 @@ alias count="ls -l | grep -c"
 # alias countf="count "^-""
 # alias countd="count "^d""
 alias cfloginrc="cat ~/workspace/yzj/cloudflow/.cfloginrc.js"
+# file preview
+alias fpreview="fdfind --type f | fzf --preview 'batcat --color=always --style=numbers --line-range=:500 {}' "
 # docker
 alias dl="docker ps -l -q"
 alias dps="docker ps"
@@ -61,6 +63,8 @@ export PYTHON=/usr/bin/python3
 alias cb="cfgit branch"
 alias ccz="cfgit cz"
 alias cm="cfgit merge"
+alias cco="cfgit co"
+alias cc="claude"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -72,4 +76,5 @@ alias cm="cfgit merge"
 export PATH=$PATH:/usr/local/go/bin
 export PATH="$HOME/.local/bin:$PATH"
 
-alias cc="claude"
+# opencode
+export PATH=/home/johnny/.opencode/bin:$PATH

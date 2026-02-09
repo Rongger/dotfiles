@@ -54,6 +54,21 @@
             "targetBranch": {
                 "release": "publish"
             }
+        },
+        {
+            "name": "portal",
+            "value": "2812"
+        },
+        {
+            "name": "portal-manage",
+            "value": "2813"
+        },
+        {
+            "name": "portal-desktop",
+            "value": "2815",
+	    "targetBranch": {
+		"release": "publish_miniapp"
+	    }
         }
     ],
     "branchs": [
