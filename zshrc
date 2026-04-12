@@ -14,7 +14,12 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias work="source ~/.sh/tmux-work.sh"
+# tmux
+alias ta="tmux attach -t"
+alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
+alias tn="tmux new-session -s"
+alias work="source ~/dotfiles/sh/tmux-work.sh"
 alias c='code .'
 alias cfg='code . && fg'
 alias gs="source ~/dotfiles/sh/git-stash.sh"
