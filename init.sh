@@ -20,13 +20,12 @@ symlink() {
   fi
 }
 
-mkdir_force ~/.sh
 for name in zshrc gitconfig tmux.conf p10k.zsh warprc sh/do-gl.sh sh/ghc.sh sh/proxy.sh sh/tmux-work.sh ssh/config; do
-  if [ ! -d "$name" ]; then
-    target="$HOME/.$name"
-    backup $target
-    symlink $PWD/$name $target
-  fi
+  target="$HOME/.$name"
+  target_dir=$(dirname "$target")
+  mkdir -p "$target_dir"
+  backup "$target"
+  symlink "$PWD/$name" "$target"
 done
 
 source ~/.sh/proxy.sh
