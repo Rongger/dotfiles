@@ -1,7 +1,27 @@
 export ZSH="$HOME/.oh-my-zsh"
+
+# nvm lazy-load
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  nvm "$@"
+}
+node() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  node "$@"
+}
+npm() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  npm "$@"
+}
+npx() {
+  unset -f nvm node npm npx
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  npx "$@"
+}
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -57,10 +77,9 @@ alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias dex="docker exec -i -t"
 dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g" | sort; }
 
-# pnpm
+# PATH
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+export PATH="$HOME/.local/bin:$PNPM_HOME:$HOME/.opencode/bin:/usr/local/go/bin:$PATH"
 
 export PYTHON=/usr/bin/python3
 
@@ -78,8 +97,4 @@ alias cc="claude"
 
 [[ ! -f ~/.gvm/scripts/gvm ]] || (source ~/.gvm/scripts/gvm && gvm use go1.19)
 
-export PATH=$PATH:/usr/local/go/bin
-export PATH="$HOME/.local/bin:$PATH"
-
-# opencode
-export PATH=/home/johnny/.opencode/bin:$PATH
+. "$HOME/.local/bin/env"
